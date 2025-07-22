@@ -20,7 +20,7 @@ import {
   HeartPulse,
   Syringe,
   Pill,
-  Scalpel,
+  Sword,
 } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
@@ -249,7 +249,7 @@ export default function LandingPage() {
             <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
               <CardHeader>
                 <div className="w-12 h-12 rounded-lg bg-orange-100 flex items-center justify-center mb-4">
-                  <Scalpel className="h-6 w-6 text-orange-600" />
+                  <Sword className="h-6 w-6 text-orange-600" />
                 </div>
                 <CardTitle>Cosmetic Services</CardTitle>
                 <CardDescription>
