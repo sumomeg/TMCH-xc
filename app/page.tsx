@@ -26,7 +26,7 @@ export default function LandingPage() {
         <div className="container flex h-16 items-center justify-between px-4 md:px-6">
           <div className="flex items-center space-x-2">
             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-600">
-              <Zap className="h-5 w-5 text-white" />
+              <img src="/tmch.png" alt="Top Medical & Cosmetic Hub (TMCH)" className="h-8 w-auto inline-block hover:scale-105 transition-transform dark:invert" />
             </div>
             <span className="text-xl font-bold">TMCH</span>
           </div>
