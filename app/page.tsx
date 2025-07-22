@@ -4,16 +4,23 @@ import { Badge } from "@/components/ui/badge"
 import {
   Check,
   Star,
-  Zap,
   Shield,
   Users,
-  BarChart3,
+  Calendar,
   ArrowRight,
   Menu,
   Facebook,
   Twitter,
   Linkedin,
   Instagram,
+  Phone,
+  Clock,
+  MapPin,
+  Stethoscope,
+  HeartPulse,
+  Syringe,
+  Pill,
+  Scalpel,
 } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
@@ -32,14 +39,14 @@ export default function LandingPage() {
           </div>
 
           <nav className="hidden md:flex items-center space-x-8">
-            <Link href="#features" className="text-sm font-medium hover:text-blue-600 transition-colors">
-              Features
+            <Link href="#about" className="text-sm font-medium hover:text-blue-600 transition-colors">
+              About
             </Link>
-            <Link href="#testimonials" className="text-sm font-medium hover:text-blue-600 transition-colors">
-              Testimonials
+            <Link href="#services" className="text-sm font-medium hover:text-blue-600 transition-colors">
+              Services
             </Link>
-            <Link href="#pricing" className="text-sm font-medium hover:text-blue-600 transition-colors">
-              Pricing
+            <Link href="#consultation" className="text-sm font-medium hover:text-blue-600 transition-colors">
+              Consultation Charges
             </Link>
             <Link href="#contact" className="text-sm font-medium hover:text-blue-600 transition-colors">
               Contact
@@ -47,10 +54,15 @@ export default function LandingPage() {
           </nav>
 
           <div className="flex items-center space-x-4">
-            <Button variant="ghost" className="hidden md:inline-flex">
-              Sign In
+            <Button asChild>
+              <a 
+                href="https://www.hotdoc.com.au/medical-centres/melbourne-VIC-3000/swanston-street-medical-centre/doctors" 
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Book Appointment
+              </a>
             </Button>
-            <Button>Get Started</Button>
             <Button variant="ghost" size="icon" className="md:hidden">
               <Menu className="h-5 w-5" />
             </Button>
@@ -65,44 +77,48 @@ export default function LandingPage() {
             <div className="space-y-8">
               <div className="space-y-4">
                 <Badge variant="secondary" className="w-fit">
-                  🚀 New: AI-Powered Automation
+                  🏆 Accredited General Practice
                 </Badge>
                 <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
-                  Streamline Your
-                  <span className="text-blue-600"> Workflow</span>
+                  Compassionate <span className="text-blue-600">Comprehensive Care</span>
                 </h1>
                 <p className="text-xl text-gray-600 max-w-[600px]">
-                  Boost productivity by 300% with our intelligent automation platform. Connect your tools, automate
-                  repetitive tasks, and focus on what matters most.
+                  TOP MEDICAL & COSMETIC HUB (TMCH) previously known as Swanston St. Medical Centre in Melbourne CBD was established in the year 2000.
                 </p>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="text-lg px-8 py-6">
-                  Start Free Trial
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                <Button size="lg" className="text-lg px-8 py-6" asChild>
+                  <a 
+                    href="https://www.hotdoc.com.au/medical-centres/melbourne-VIC-3000/swanston-street-medical-centre/doctors" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Book Appointment
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </a>
                 </Button>
                 <Button variant="outline" size="lg" className="text-lg px-8 py-6 bg-transparent">
-                  Watch Demo
+                  Call Now
                 </Button>
               </div>
 
               <div className="flex items-center space-x-8 text-sm text-gray-600">
                 <div className="flex items-center space-x-2">
                   <Check className="h-4 w-4 text-green-500" />
-                  <span>14-day free trial</span>
+                  <span>Student Discounts</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <Check className="h-4 w-4 text-green-500" />
-                  <span>No credit card required</span>
+                  <span>Multicultural Services</span>
                 </div>
               </div>
             </div>
 
             <div className="relative">
               <Image
-                src="/placeholder.svg?height=600&width=800"
-                alt="StreamLine Dashboard"
+                src="/hero-image.jpg" // Replace with actual TMCH hero image
+                alt="TMCH Medical Centre"
                 width={800}
                 height={600}
                 className="rounded-xl shadow-2xl"
@@ -112,18 +128,84 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Features Section */}
-      <section id="features" className="py-20 md:py-32">
+      {/* About Section */}
+      <section id="about" className="py-20 md:py-32">
         <div className="container px-4 md:px-6">
           <div className="text-center space-y-4 mb-16">
             <Badge variant="outline" className="w-fit mx-auto">
-              Features
+              About Us
             </Badge>
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-              Everything you need to succeed
+              Our Medical Practice
             </h2>
             <p className="text-xl text-gray-600 max-w-[800px] mx-auto">
-              Powerful features designed to transform how you work and collaborate with your team.
+              Providing top quality service for more than 25 years
+            </p>
+          </div>
+
+          <div className="grid gap-8 md:grid-cols-2">
+            <div className="space-y-6">
+              <p className="text-lg">
+                <strong>TOP MEDICAL & COSMETIC HUB (TMCH)</strong> is an Accredited General Practice that has been providing 
+                top quality service to young Families/Professionals, Vibrant Multicultural Visitors and all Students 
+                with a discounted fee for more than 25 years.
+              </p>
+              <p className="text-lg">
+                TMCH is operated by experienced specialist General Practitioners who are dedicated to serve the 
+                highest quality of care with excellent organisational skills.
+              </p>
+              <p className="text-lg">
+                Our highly trained Nurses and friendly Staff work closely as a team with our doctors for providing 
+                <strong> Compassionate Comprehensive Care</strong>.
+              </p>
+            </div>
+            <div className="space-y-6">
+              <div className="flex items-start space-x-4">
+                <div className="mt-1">
+                  <MapPin className="h-6 w-6 text-blue-600" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold">Location</h3>
+                  <p>Level 3, 255 Bourke St, Melbourne Vic 3000</p>
+                </div>
+              </div>
+              <div className="flex items-start space-x-4">
+                <div className="mt-1">
+                  <Phone className="h-6 w-6 text-blue-600" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold">Contact</h3>
+                  <p>Phone: 03 70460890</p>
+                  <p>Fax: 03 70460840</p>
+                </div>
+              </div>
+              <div className="flex items-start space-x-4">
+                <div className="mt-1">
+                  <Clock className="h-6 w-6 text-blue-600" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold">Hours</h3>
+                  <p>9.30am – 6pm Monday to Friday</p>
+                  <p>10am – 4pm Saturday</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section id="services" className="py-20 md:py-32 bg-gray-50">
+        <div className="container px-4 md:px-6">
+          <div className="text-center space-y-4 mb-16">
+            <Badge variant="outline" className="w-fit mx-auto">
+              Our Services
+            </Badge>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
+              Comprehensive Medical & Cosmetic Services
+            </h2>
+            <p className="text-xl text-gray-600 max-w-[800px] mx-auto">
+              Modern and well equipped medical centre with a three bedded procedural room
             </p>
           </div>
 
@@ -131,11 +213,11 @@ export default function LandingPage() {
             <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
               <CardHeader>
                 <div className="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center mb-4">
-                  <Zap className="h-6 w-6 text-blue-600" />
+                  <Stethoscope className="h-6 w-6 text-blue-600" />
                 </div>
-                <CardTitle>Smart Automation</CardTitle>
+                <CardTitle>General Health</CardTitle>
                 <CardDescription>
-                  AI-powered workflows that learn from your patterns and automate repetitive tasks.
+                  Health check-ups, chronic disease management, and preventive care.
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -143,11 +225,11 @@ export default function LandingPage() {
             <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
               <CardHeader>
                 <div className="w-12 h-12 rounded-lg bg-green-100 flex items-center justify-center mb-4">
-                  <Shield className="h-6 w-6 text-green-600" />
+                  <HeartPulse className="h-6 w-6 text-green-600" />
                 </div>
-                <CardTitle>Enterprise Security</CardTitle>
+                <CardTitle>Specialized Care</CardTitle>
                 <CardDescription>
-                  Bank-level encryption and compliance with SOC 2, GDPR, and HIPAA standards.
+                  Skin cancer checks, weight loss clinic, and sexual health services.
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -155,11 +237,11 @@ export default function LandingPage() {
             <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
               <CardHeader>
                 <div className="w-12 h-12 rounded-lg bg-purple-100 flex items-center justify-center mb-4">
-                  <Users className="h-6 w-6 text-purple-600" />
+                  <Syringe className="h-6 w-6 text-purple-600" />
                 </div>
-                <CardTitle>Team Collaboration</CardTitle>
+                <CardTitle>Vaccinations</CardTitle>
                 <CardDescription>
-                  Real-time collaboration tools with advanced permission controls and team insights.
+                  Travel vaccinations, childhood immunizations, and yellow fever vaccines.
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -167,11 +249,11 @@ export default function LandingPage() {
             <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
               <CardHeader>
                 <div className="w-12 h-12 rounded-lg bg-orange-100 flex items-center justify-center mb-4">
-                  <BarChart3 className="h-6 w-6 text-orange-600" />
+                  <Scalpel className="h-6 w-6 text-orange-600" />
                 </div>
-                <CardTitle>Advanced Analytics</CardTitle>
+                <CardTitle>Cosmetic Services</CardTitle>
                 <CardDescription>
-                  Comprehensive dashboards and reports to track performance and optimize workflows.
+                  Featuring the latest Pico Laser for facial rejuvenation and other treatments.
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -180,19 +262,19 @@ export default function LandingPage() {
       </section>
 
       {/* Testimonials Section */}
-      <section id="testimonials" className="py-20 md:py-32 bg-gray-50">
+      <section className="py-20 md:py-32">
         <div className="container px-4 md:px-6">
           <div className="text-center space-y-4 mb-16">
             <Badge variant="outline" className="w-fit mx-auto">
-              Testimonials
+              Our Values
             </Badge>
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">Loved by thousands of teams</h2>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">Respect, Dignity & Professionalism</h2>
             <p className="text-xl text-gray-600 max-w-[800px] mx-auto">
-              See what our customers have to say about their experience with StreamLine.
+              We treat all clients equally with the highest standard of care
             </p>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-8 md:grid-cols-3">
             <Card className="border-0 shadow-lg">
               <CardHeader>
                 <div className="flex items-center space-x-1 mb-4">
@@ -201,21 +283,20 @@ export default function LandingPage() {
                   ))}
                 </div>
                 <CardDescription className="text-base">
-                  "StreamLine has completely transformed our workflow. We've reduced manual tasks by 80% and our team
-                  productivity has never been higher."
+                  "TMCH has been my family doctor for years. The care and attention we receive is exceptional."
                 </CardDescription>
               </CardHeader>
               <CardFooter className="flex items-center space-x-4">
                 <Image
-                  src="/placeholder.svg?height=40&width=40"
-                  alt="Sarah Johnson"
+                  src="/patient1.jpg" // Replace with actual image
+                  alt="Patient"
                   width={40}
                   height={40}
                   className="rounded-full"
                 />
                 <div>
                   <p className="font-semibold">Sarah Johnson</p>
-                  <p className="text-sm text-gray-600">CEO, TechCorp</p>
+                  <p className="text-sm text-gray-600">Long-term Patient</p>
                 </div>
               </CardFooter>
             </Card>
@@ -228,21 +309,20 @@ export default function LandingPage() {
                   ))}
                 </div>
                 <CardDescription className="text-base">
-                  "The automation features are incredible. What used to take hours now happens automatically. Our ROI
-                  was positive within the first month."
+                  "As an international student, I appreciate the discounted fees and multicultural understanding."
                 </CardDescription>
               </CardHeader>
               <CardFooter className="flex items-center space-x-4">
                 <Image
-                  src="/placeholder.svg?height=40&width=40"
-                  alt="Michael Chen"
+                  src="/student.jpg" // Replace with actual image
+                  alt="Student"
                   width={40}
                   height={40}
                   className="rounded-full"
                 />
                 <div>
                   <p className="font-semibold">Michael Chen</p>
-                  <p className="text-sm text-gray-600">CTO, StartupXYZ</p>
+                  <p className="text-sm text-gray-600">International Student</p>
                 </div>
               </CardFooter>
             </Card>
@@ -255,153 +335,21 @@ export default function LandingPage() {
                   ))}
                 </div>
                 <CardDescription className="text-base">
-                  "StreamLine's customer support is outstanding. The platform is intuitive and the results speak for
-                  themselves - 300% productivity increase!"
+                  "The cosmetic services are top-notch with professional results and care."
                 </CardDescription>
               </CardHeader>
               <CardFooter className="flex items-center space-x-4">
                 <Image
-                  src="/placeholder.svg?height=40&width=40"
-                  alt="Emily Rodriguez"
+                  src="/cosmetic-patient.jpg" // Replace with actual image
+                  alt="Cosmetic Patient"
                   width={40}
                   height={40}
                   className="rounded-full"
                 />
                 <div>
                   <p className="font-semibold">Emily Rodriguez</p>
-                  <p className="text-sm text-gray-600">Operations Director, GrowthCo</p>
+                  <p className="text-sm text-gray-600">Cosmetic Patient</p>
                 </div>
-              </CardFooter>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Pricing Section */}
-      <section id="pricing" className="py-20 md:py-32">
-        <div className="container px-4 md:px-6">
-          <div className="text-center space-y-4 mb-16">
-            <Badge variant="outline" className="w-fit mx-auto">
-              Pricing
-            </Badge>
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">Simple, transparent pricing</h2>
-            <p className="text-xl text-gray-600 max-w-[800px] mx-auto">
-              Choose the perfect plan for your team. All plans include a 14-day free trial.
-            </p>
-          </div>
-
-          <div className="grid gap-8 lg:grid-cols-3 max-w-5xl mx-auto">
-            <Card className="border-2 hover:border-blue-200 transition-colors">
-              <CardHeader>
-                <CardTitle className="text-2xl">Starter</CardTitle>
-                <CardDescription>Perfect for small teams getting started</CardDescription>
-                <div className="mt-4">
-                  <span className="text-4xl font-bold">$29</span>
-                  <span className="text-gray-600">/month</span>
-                </div>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="space-y-3">
-                  <div className="flex items-center space-x-3">
-                    <Check className="h-4 w-4 text-green-500" />
-                    <span>Up to 5 team members</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Check className="h-4 w-4 text-green-500" />
-                    <span>100 automation runs/month</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Check className="h-4 w-4 text-green-500" />
-                    <span>Basic integrations</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Check className="h-4 w-4 text-green-500" />
-                    <span>Email support</span>
-                  </div>
-                </div>
-              </CardContent>
-              <CardFooter>
-                <Button className="w-full bg-transparent" variant="outline">
-                  Start Free Trial
-                </Button>
-              </CardFooter>
-            </Card>
-
-            <Card className="border-2 border-blue-500 relative hover:border-blue-600 transition-colors">
-              <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-blue-500">Most Popular</Badge>
-              <CardHeader>
-                <CardTitle className="text-2xl">Professional</CardTitle>
-                <CardDescription>Best for growing teams and businesses</CardDescription>
-                <div className="mt-4">
-                  <span className="text-4xl font-bold">$79</span>
-                  <span className="text-gray-600">/month</span>
-                </div>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="space-y-3">
-                  <div className="flex items-center space-x-3">
-                    <Check className="h-4 w-4 text-green-500" />
-                    <span>Up to 25 team members</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Check className="h-4 w-4 text-green-500" />
-                    <span>1,000 automation runs/month</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Check className="h-4 w-4 text-green-500" />
-                    <span>Advanced integrations</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Check className="h-4 w-4 text-green-500" />
-                    <span>Priority support</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Check className="h-4 w-4 text-green-500" />
-                    <span>Advanced analytics</span>
-                  </div>
-                </div>
-              </CardContent>
-              <CardFooter>
-                <Button className="w-full">Start Free Trial</Button>
-              </CardFooter>
-            </Card>
-
-            <Card className="border-2 hover:border-blue-200 transition-colors">
-              <CardHeader>
-                <CardTitle className="text-2xl">Enterprise</CardTitle>
-                <CardDescription>For large organizations with custom needs</CardDescription>
-                <div className="mt-4">
-                  <span className="text-4xl font-bold">Custom</span>
-                </div>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="space-y-3">
-                  <div className="flex items-center space-x-3">
-                    <Check className="h-4 w-4 text-green-500" />
-                    <span>Unlimited team members</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Check className="h-4 w-4 text-green-500" />
-                    <span>Unlimited automation runs</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Check className="h-4 w-4 text-green-500" />
-                    <span>Custom integrations</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Check className="h-4 w-4 text-green-500" />
-                    <span>24/7 dedicated support</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Check className="h-4 w-4 text-green-500" />
-                    <span>Custom reporting</span>
-                  </div>
-                </div>
-              </CardContent>
-              <CardFooter>
-                <Button className="w-full bg-transparent" variant="outline">
-                  Contact Sales
-                </Button>
               </CardFooter>
             </Card>
           </div>
@@ -413,26 +361,31 @@ export default function LandingPage() {
         <div className="container px-4 md:px-6 text-center">
           <div className="max-w-3xl mx-auto space-y-8">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-              Ready to streamline your workflow?
+              Ready to experience compassionate care?
             </h2>
             <p className="text-xl text-blue-100">
-              Join thousands of teams who have already transformed their productivity with StreamLine. Start your free
-              trial today and see the difference automation can make.
+              Book your appointment today and join our community of satisfied patients.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="secondary" className="text-lg px-8 py-6">
-                Start Free Trial
-                <ArrowRight className="ml-2 h-5 w-5" />
+              <Button size="lg" variant="secondary" className="text-lg px-8 py-6" asChild>
+                <a 
+                  href="https://www.hotdoc.com.au/medical-centres/melbourne-VIC-3000/swanston-street-medical-centre/doctors" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Book Online
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </a>
               </Button>
               <Button
                 size="lg"
                 variant="outline"
                 className="text-lg px-8 py-6 border-white text-white hover:bg-white hover:text-blue-600 bg-transparent"
               >
-                Schedule Demo
+                Call Now
               </Button>
             </div>
-            <p className="text-sm text-blue-200">No credit card required • 14-day free trial • Cancel anytime</p>
+            <p className="text-sm text-blue-200">Student discounts available • Multicultural services • Walk-ins welcome</p>
           </div>
         </div>
       </section>
@@ -444,12 +397,12 @@ export default function LandingPage() {
             <div className="space-y-4">
               <div className="flex items-center space-x-2">
                 <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-600">
-                  <Zap className="h-5 w-5 text-white" />
+                  <img src="/tmch.png" alt="TMCH" className="h-5 w-auto" />
                 </div>
-                <span className="text-xl font-bold">StreamLine</span>
+                <span className="text-xl font-bold">TMCH</span>
               </div>
               <p className="text-gray-400">
-                Streamline your workflow with intelligent automation and boost your team's productivity.
+                Top Medical & Cosmetic Hub - Compassionate Comprehensive Care in Melbourne CBD.
               </p>
               <div className="flex space-x-4">
                 <Link href="#" className="text-gray-400 hover:text-white transition-colors">
@@ -468,71 +421,68 @@ export default function LandingPage() {
             </div>
 
             <div className="space-y-4">
-              <h3 className="text-lg font-semibold">Product</h3>
+              <h3 className="text-lg font-semibold">Services</h3>
               <div className="space-y-2">
-                <Link href="#" className="block text-gray-400 hover:text-white transition-colors">
-                  Features
+                <Link href="#services" className="block text-gray-400 hover:text-white transition-colors">
+                  General Health
                 </Link>
-                <Link href="#" className="block text-gray-400 hover:text-white transition-colors">
-                  Integrations
+                <Link href="#services" className="block text-gray-400 hover:text-white transition-colors">
+                  Cosmetic Services
                 </Link>
-                <Link href="#" className="block text-gray-400 hover:text-white transition-colors">
-                  API
+                <Link href="#services" className="block text-gray-400 hover:text-white transition-colors">
+                  Vaccinations
                 </Link>
-                <Link href="#" className="block text-gray-400 hover:text-white transition-colors">
-                  Security
+                <Link href="#services" className="block text-gray-400 hover:text-white transition-colors">
+                  Specialized Care
                 </Link>
               </div>
             </div>
 
             <div className="space-y-4">
-              <h3 className="text-lg font-semibold">Company</h3>
+              <h3 className="text-lg font-semibold">Clinic</h3>
               <div className="space-y-2">
-                <Link href="#" className="block text-gray-400 hover:text-white transition-colors">
-                  About
+                <Link href="#about" className="block text-gray-400 hover:text-white transition-colors">
+                  About Us
                 </Link>
-                <Link href="#" className="block text-gray-400 hover:text-white transition-colors">
-                  Blog
+                <Link href="#consultation" className="block text-gray-400 hover:text-white transition-colors">
+                  Fees
+                </Link>
+                <Link href="#contact" className="block text-gray-400 hover:text-white transition-colors">
+                  Contact
                 </Link>
                 <Link href="#" className="block text-gray-400 hover:text-white transition-colors">
                   Careers
                 </Link>
-                <Link href="#" className="block text-gray-400 hover:text-white transition-colors">
-                  Contact
-                </Link>
               </div>
             </div>
 
             <div className="space-y-4">
-              <h3 className="text-lg font-semibold">Support</h3>
+              <h3 className="text-lg font-semibold">Contact</h3>
               <div className="space-y-2">
-                <Link href="#" className="block text-gray-400 hover:text-white transition-colors">
-                  Help Center
-                </Link>
-                <Link href="#" className="block text-gray-400 hover:text-white transition-colors">
-                  Documentation
-                </Link>
-                <Link href="#" className="block text-gray-400 hover:text-white transition-colors">
-                  Status
-                </Link>
-                <Link href="#" className="block text-gray-400 hover:text-white transition-colors">
-                  Community
-                </Link>
+                <div className="flex items-start space-x-3">
+                  <MapPin className="h-5 w-5 text-gray-400 mt-0.5" />
+                  <span className="text-gray-400">Level 3, 255 Bourke St, Melbourne VIC 3000</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <Phone className="h-5 w-5 text-gray-400" />
+                  <span className="text-gray-400">03 70460890</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <Clock className="h-5 w-5 text-gray-400" />
+                  <span className="text-gray-400">Mon-Fri: 9:30am-6pm, Sat: 10am-4pm</span>
+                </div>
               </div>
             </div>
           </div>
 
           <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400 text-sm">© {new Date().getFullYear()} StreamLine. All rights reserved.</p>
+            <p className="text-gray-400 text-sm">© {new Date().getFullYear()} Top Medical & Cosmetic Hub. All rights reserved.</p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <Link href="#" className="text-gray-400 hover:text-white text-sm transition-colors">
                 Privacy Policy
               </Link>
               <Link href="#" className="text-gray-400 hover:text-white text-sm transition-colors">
                 Terms of Service
-              </Link>
-              <Link href="#" className="text-gray-400 hover:text-white text-sm transition-colors">
-                Cookie Policy
               </Link>
             </div>
           </div>
