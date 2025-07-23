@@ -23,6 +23,7 @@ import {
   Syringe,
   Pill,
   Scalpel,
+  Sword,
   ChevronLeft,
   ChevronRight,
 } from "lucide-react"
