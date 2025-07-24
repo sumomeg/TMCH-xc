@@ -422,7 +422,7 @@ export default function LandingPage() {
                   className="rounded-full"
                 />
                 <div>
-                  <p className="font-semibold">Michael Chen</p>
+                  <p className="font-semibold">Amy Norman</p>
                   <p className="text-sm text-gray-600">International Student</p>
                 </div>
               </CardFooter>
