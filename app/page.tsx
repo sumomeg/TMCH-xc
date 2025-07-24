@@ -79,9 +79,41 @@ export default function LandingPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Header - unchanged from previous version */}
+          {/* Header */}
       <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
-        {/* ... existing header code ... */}
+        <div className="container flex h-16 items-center justify-between px-4 md:px-6">
+          <div className="flex items-center space-x-2">
+            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-600">
+              <img src="/tmch.png" alt="Top Medical & Cosmetic Hub (TMCH)" className="h-8 w-auto inline-block hover:scale-105 transition-transform dark:invert" />
+            </div>
+            <span className="text-xl font-bold">TMCH</span>
+          </div>
+
+          <nav className="hidden md:flex items-center space-x-8">
+            <Link href="#features" className="text-sm font-medium hover:text-blue-600 transition-colors">
+              Features
+            </Link>
+            <Link href="#testimonials" className="text-sm font-medium hover:text-blue-600 transition-colors">
+              Testimonials
+            </Link>
+            <Link href="#pricing" className="text-sm font-medium hover:text-blue-600 transition-colors">
+              Pricing
+            </Link>
+            <Link href="#contact" className="text-sm font-medium hover:text-blue-600 transition-colors">
+              Contact
+            </Link>
+          </nav>
+
+          <div className="flex items-center space-x-4">
+            <Button variant="ghost" className="hidden md:inline-flex">
+              Sign In
+            </Button>
+            <Button>Get Started</Button>
+            <Button variant="ghost" size="icon" className="md:hidden">
+              <Menu className="h-5 w-5" />
+            </Button>
+          </div>
+        </div>
       </header>
 
       {/* Updated Hero Section with Slideshow */}
