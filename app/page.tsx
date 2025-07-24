@@ -389,14 +389,14 @@ export default function LandingPage() {
               </CardHeader>
               <CardFooter className="flex items-center space-x-4">
                 <Image
-                  src="/patient1.jpg" // Replace with actual image
+                  src="/MarkBrooks.jpg" // Replace with actual image
                   alt="Patient"
                   width={40}
                   height={40}
                   className="rounded-full"
                 />
                 <div>
-                  <p className="font-semibold">Sarah Johnson</p>
+                  <p className="font-semibold">Mark Brooks</p>
                   <p className="text-sm text-gray-600">Long-term Patient</p>
                 </div>
               </CardFooter>
