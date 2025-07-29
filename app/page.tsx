@@ -90,13 +90,10 @@ export default function LandingPage() {
           </div>
 
           <nav className="hidden md:flex items-center space-x-8">
-            <Link href="#features" className="text-sm font-medium hover:text-blue-600 transition-colors">
-              Features
+            <Link href="#Services" className="text-sm font-medium hover:text-blue-600 transition-colors">
+              Services
             </Link>
-            <Link href="#testimonials" className="text-sm font-medium hover:text-blue-600 transition-colors">
-              Testimonials
-            </Link>
-            <Link href="#pricing" className="text-sm font-medium hover:text-blue-600 transition-colors">
+           <Link href="#pricing" className="text-sm font-medium hover:text-blue-600 transition-colors">
               Pricing
             </Link>
             <Link href="#contact" className="text-sm font-medium hover:text-blue-600 transition-colors">
@@ -108,7 +105,7 @@ export default function LandingPage() {
             <Button variant="ghost" className="hidden md:inline-flex">
               Sign In
             </Button>
-            <Button>Get Started</Button>
+            <Button>Book Appointment</Button>
             <Button variant="ghost" size="icon" className="md:hidden">
               <Menu className="h-5 w-5" />
             </Button>
