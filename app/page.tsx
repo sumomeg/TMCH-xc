@@ -163,19 +163,26 @@ export default function LandingPage() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="text-lg px-8 py-6" asChild>
-                  <a 
-                    href="https://www.hotdoc.com.au/medical-centres/melbourne-VIC-3000/swanston-street-medical-centre/doctors" 
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Book Appointment
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </a>
-                </Button>
-                <Button variant="outline" size="lg" className="text-lg px-8 py-6 bg-white/10 text-white hover:bg-white hover:text-blue-600">
-                  Call Now
-                </Button>
+                <Button size="lg" className="text-lg px-8 py-6 hover:bg-blue-700 transition-colors" asChild>
+  <a 
+    href="https://www.hotdoc.com.au/medical-centres/melbourne-VIC-3000/swanston-street-medical-centre/doctors" 
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Book Online
+    <ArrowRight className="ml-2 h-5 w-5" />
+  </a>
+</Button>
+               <Button 
+  variant="outline" 
+  size="lg" 
+  className="text-lg px-8 py-6 bg-transparent hover:bg-blue-100 transition-colors"
+  asChild
+>
+  <a href="tel:0370460890">
+    Call Now
+  </a>
+</Button>
               </div>
 
               <div className="flex flex-wrap gap-4 text-sm text-blue-100">
