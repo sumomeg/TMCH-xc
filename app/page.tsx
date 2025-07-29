@@ -102,13 +102,26 @@ export default function LandingPage() {
           </nav>
 
           <div className="flex items-center space-x-4">
-            <Button variant="ghost" className="hidden md:inline-flex">
-             Call Now
-            </Button>
-            <Button>Book Online</Button>
-            <Button variant="ghost" size="icon" className="md:hidden">
-              <Menu className="h-5 w-5" />
-            </Button>
+            <Button 
+  variant="outline" 
+  size="lg" 
+  className="text-lg px-8 py-6 bg-transparent hover:bg-blue-100 transition-colors"
+  asChild
+>
+  <a href="tel:0370460890">
+    Call Now
+  </a>
+</Button>
+            <Button asChild>
+  <a 
+    href="https://www.hotdoc.com.au/medical-centres/melbourne-VIC-3000/swanston-street-medical-centre/doctors" 
+    target="_blank"
+    rel="noopener noreferrer"
+    className="hover:bg-blue-700 transition-colors"
+  >
+    Book Online
+  </a>
+</Button>
           </div>
         </div>
       </header>
