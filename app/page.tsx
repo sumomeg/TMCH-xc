@@ -103,9 +103,9 @@ export default function LandingPage() {
 
           <div className="flex items-center space-x-4">
             <Button variant="ghost" className="hidden md:inline-flex">
-              Sign In
+             Call Now
             </Button>
-            <Button>Book Appointment</Button>
+            <Button>Book Online</Button>
             <Button variant="ghost" size="icon" className="md:hidden">
               <Menu className="h-5 w-5" />
             </Button>
