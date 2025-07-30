@@ -46,7 +46,7 @@ const CosmeticPage = () => {
                 </div>
                 <ContactForm />
                 <div id="contact1b">
-                  <p><img alt="" src="/uploads/images/logo-w%4072x.png" style={{width:'200px',height:'120px'}} className="img-responsive" /></p>
+                  <p><img alt="" src="/tmch.png" style={{width:'200px',height:'120px'}} className="img-responsive" /></p>
                 </div>
               </div>
               <div id="contact2" className="col-sm-4">
