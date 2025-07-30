@@ -1,6 +1,6 @@
 // app/cosmetic/page.tsx   
 import Head from 'next/head';
-import { ContactForm } from '../components/ContactForm';
+import { ContactForm } from '@/components/ContactForm';
 
 const CosmeticPage = () => {
   return (
