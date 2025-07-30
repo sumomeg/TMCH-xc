@@ -1,13 +1,6 @@
 /** @type {import('next').NextConfig} */
 
-const path = require('path');
-
-module.exports = {
-  webpack: (config) => {
-    config.resolve.alias['@'] = path.resolve(__dirname);
-    return config;
-  }
-};
+import path from 'path';
 
 const nextConfig = {
   eslint: {
@@ -19,6 +12,10 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-}
+  webpack: (config) => {
+    config.resolve.alias['@'] = path.resolve(__dirname);
+    return config;
+  }
+};
 
-export default nextConfig
+export default nextConfig;
