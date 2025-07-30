@@ -1,4 +1,4 @@
-// app/cosmetic/page.tsx   
+// app/cosmetic/page.tsx 
 import Head from 'next/head';
 import { ContactForm } from '@/components/ContactForm';
 
