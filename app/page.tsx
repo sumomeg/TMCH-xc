@@ -93,7 +93,7 @@ export default function LandingPage() {
             <Link href="#Services" className="text-sm font-medium hover:text-blue-600 transition-colors">
               Services
             </Link>
-              <Link href="#cosmetic" className="text-sm font-medium hover:text-blue-600 transition-colors">
+              <Link href="/cosmetic" className="text-sm font-medium hover:text-blue-600 transition-colors">
               Cosmetic
             </Link>
            <Link href="#pricing" className="text-sm font-medium hover:text-blue-600 transition-colors">
