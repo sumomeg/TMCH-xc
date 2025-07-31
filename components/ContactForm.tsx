@@ -11,6 +11,11 @@ export default function ContactForm() {
     services: [] as string[],
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    success: boolean;
+    message: string;
+  } | null>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -29,8 +34,52 @@ export default function ContactForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // We'll implement the submission logic in the next step
-    console.log('Form submitted:', formData);
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    try {
+      // Format data to match your original form structure
+      const submissionData = {
+        name: formData.name,
+        phone: formData.phone,
+        email: formData.email,
+        'id-2602-services': formData.services,
+        message: formData.message,
+        '__email__': '' // This was in your original form
+      };
+
+      const response = await fetch('https://convertopages.com/forms/process?formId=32045', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: new URLSearchParams(submissionData as any).toString()
+      });
+
+      if (response.ok) {
+        setSubmitStatus({
+          success: true,
+          message: 'Thank you! Your message has been sent successfully.'
+        });
+        // Reset form after successful submission
+        setFormData({
+          name: '',
+          phone: '',
+          email: '',
+          services: [],
+          message: ''
+        });
+      } else {
+        throw new Error('Submission failed');
+      }
+    } catch (error) {
+      setSubmitStatus({
+        success: false,
+        message: 'There was an error submitting your form. Please try again.'
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -129,12 +178,22 @@ export default function ContactForm() {
         ></textarea>
       </div>
 
+       {/* Status Message */}
+      {submitStatus && (
+        <div className={`mb-4 p-4 rounded ${submitStatus.success ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>
+          {submitStatus.message}
+        </div>
+      )}
+
       {/* Submit Button */}
       <button
         type="submit"
-        className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition duration-150"
+        disabled={isSubmitting}
+        className={`w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition duration-150 ${
+          isSubmitting ? 'opacity-70 cursor-not-allowed' : ''
+        }`}
       >
-        Submit
+        {isSubmitting ? 'Submitting...' : 'Submit'}
       </button>
     </form>
   );
