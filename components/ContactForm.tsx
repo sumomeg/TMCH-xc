@@ -38,55 +38,55 @@ export default function ContactForm() {
   setSubmitStatus(null);
 
   try {
-    const submissionData = {
-      name: formData.name,
-      phone: formData.phone,
-      email: formData.email,
-      'id-2602-services': formData.services,
-      message: formData.message,
-      '__email__': ''
-    };
+    // Create form data that exactly matches original form
+    const formDataToSubmit = new FormData();
+    
+    // Append all fields
+    formDataToSubmit.append('name', formData.name);
+    formDataToSubmit.append('phone', formData.phone);
+    formDataToSubmit.append('email', formData.email);
+    formDataToSubmit.append('message', formData.message);
+    formDataToSubmit.append('__email__', '');
 
-    console.log('Submitting data:', submissionData); // Add this line
-    console.log('Formatted data:', new URLSearchParams(submissionData as any).toString()); // Add this line
+    // Append each service individually
+    formData.services.forEach(service => {
+      formDataToSubmit.append('id2602services[]', service);
+    });
+
+    console.log('Submitting data:', Object.fromEntries(formDataToSubmit));
 
     const response = await fetch('https://convertopages.com/forms/process?formId=32045', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      body: new URLSearchParams(submissionData as any).toString()
+      body: formDataToSubmit // Let browser set proper headers
     });
 
-    console.log('Response status:', response.status); // Add this line
-    // ... rest of your code
-
-      if (response.ok) {
-        setSubmitStatus({
-          success: true,
-          message: 'Thank you! Your message has been sent successfully.'
-        });
-        // Reset form after successful submission
-        setFormData({
-          name: '',
-          phone: '',
-          email: '',
-          services: [],
-          message: ''
-        });
-      } else {
-        throw new Error('Submission failed');
-      }
-    } catch (error) {
+    console.log('Response status:', response.status);
+    
+    if (response.ok) {
       setSubmitStatus({
-        success: false,
-        message: 'There was an error submitting your form. Please try again.'
+        success: true,
+        message: 'Thank you! Your message has been sent successfully.'
       });
-    } finally {
-      setIsSubmitting(false);
+      setFormData({
+        name: '',
+        phone: '',
+        email: '',
+        services: [],
+        message: ''
+      });
+    } else {
+      throw new Error(`Server responded with status ${response.status}`);
     }
-  };
-
+  } catch (error) {
+    console.error('Submission error:', error);
+    setSubmitStatus({
+      success: false,
+      message: error instanceof Error ? error.message : 'There was an error submitting your form. Please try again.'
+    });
+  } finally {
+    setIsSubmitting(false);
+  }
+};
   return (
     <form onSubmit={handleSubmit} className="w-full p-6 bg-white rounded-lg shadow-md">
       {/* Name Field */}
