@@ -33,28 +33,33 @@ export default function ContactForm() {
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitStatus(null);
+  e.preventDefault();
+  setIsSubmitting(true);
+  setSubmitStatus(null);
 
-    try {
-      // Format data to match your original form structure
-      const submissionData = {
-        name: formData.name,
-        phone: formData.phone,
-        email: formData.email,
-        'id-2602-services': formData.services,
-        message: formData.message,
-        '__email__': '' // This was in your original form
-      };
+  try {
+    const submissionData = {
+      name: formData.name,
+      phone: formData.phone,
+      email: formData.email,
+      'id-2602-services': formData.services,
+      message: formData.message,
+      '__email__': ''
+    };
 
-      const response = await fetch('https://convertopages.com/forms/process?formId=32045', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: new URLSearchParams(submissionData as any).toString()
-      });
+    console.log('Submitting data:', submissionData); // Add this line
+    console.log('Formatted data:', new URLSearchParams(submissionData as any).toString()); // Add this line
+
+    const response = await fetch('https://convertopages.com/forms/process?formId=32045', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: new URLSearchParams(submissionData as any).toString()
+    });
+
+    console.log('Response status:', response.status); // Add this line
+    // ... rest of your code
 
       if (response.ok) {
         setSubmitStatus({
