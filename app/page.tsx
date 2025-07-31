@@ -93,6 +93,9 @@ export default function LandingPage() {
             <Link href="#Services" className="text-sm font-medium hover:text-blue-600 transition-colors">
               Services
             </Link>
+              <Link href="#cosmetic" className="text-sm font-medium hover:text-blue-600 transition-colors">
+              Cosmetic
+            </Link>
            <Link href="#pricing" className="text-sm font-medium hover:text-blue-600 transition-colors">
               Pricing
             </Link>
@@ -458,7 +461,7 @@ export default function LandingPage() {
               </CardHeader>
               <CardFooter className="flex items-center space-x-4">
                 <Image
-                  src="/ClarraBloomberg.jpg" // Replace with actual image
+                  src="/ClarraBloomberg.jpg" // Replaced with actual image
                   alt="Cosmetic Patient"
                   width={40}
                   height={40}
@@ -544,7 +547,7 @@ export default function LandingPage() {
                 <Link href="#services" className="block text-gray-400 hover:text-white transition-colors">
                   General Health
                 </Link>
-                <Link href="#services" className="block text-gray-400 hover:text-white transition-colors">
+                <Link href="#cosmetic" className="block text-gray-400 hover:text-white transition-colors">
                   Cosmetic Services
                 </Link>
                 <Link href="#services" className="block text-gray-400 hover:text-white transition-colors">
